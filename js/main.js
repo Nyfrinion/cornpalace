@@ -1,5 +1,4 @@
 // Import Axios library
-const axios = require('axios');
 
 document.addEventListener('DOMContentLoaded', function() {
     const glassCheckbox = document.getElementById('glass');
@@ -47,7 +46,7 @@ const requestData = {
 };
 
 // Make POST request using Axios
-axios.post('https://api.qrcode-monkey.com//qr/custom', requestData)
+axios.post('https://api.qrcode-monkey.com/qr/custom', requestData)
   .then(response => {
       console.log("QR Code URL:", response.data.imageUrl);
   })
