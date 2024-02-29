@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>ROYGBIV QR Code T-Shirt</title>
+    <script src="/node_modules/axios/dist/axios.js"></script>
+    <script src="/js/roygbiv.js"></script>
+</head>
+<body>
+  <div class="title-container">
+    <img src="/assets/img/qrcode.png" alt="Image">
+    <p>QR Clothes</p>
+    <img src="/assets/img/cart.svg" class="right" alt="Image">
+    <input type="checkbox" id="glass">
+    <label for="glass">
+    <img src="/assets/img/glass.svg" class="right" alt="Image">
+    </label>
+  </div>
+  <div class="searchbox">
+    <form action="/search" method="GET">
+      <input type="text" name="q" placeholder="Search...">
+      <button type="submit" style="margin-left: 10px;">Search</button>
+    </form>
+  </div>
+    <input type="checkbox" id="menu">   
+    <label for="menu">Menu
+      <img src="https://www.svgrepo.com/show/491244/hamburger.svg" class="logo">
+    </label>
+    <div class="dropdown">
+          <a class="align" href="index.html">Home</a>
+          <a class="align">Shop</a>
+          <a class="align">About</a>
+          <a class="align">Contact</a>
+        </div>
+    </div>
+</body>
+</html>
