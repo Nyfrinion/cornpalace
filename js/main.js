@@ -15,33 +15,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Define request data
 const requestData = {
-  data: "https://www.qrcode-monkey.com",
+  data: "https://www.nightwalk.org",
   config: {
-      body: "rounded-pointed",
-      eye: "frame14",
-      eyeBall: "ball16",
-      erf1: [],
-      erf2: ["fh"],
-      erf3: ["fv"],
-      brf1: [],
-      brf2: ["fh"],
-      brf3: ["fv"],
-      bodyColor: "#5C8B29",
-      bgColor: "#FFFFFF",
-      eye1Color: "#3F6B2B",
-      eye2Color: "#3F6B2B",
-      eye3Color: "#3F6B2B",
-      eyeBall1Color: "#60A541",
-      eyeBall2Color: "#60A541",
-      eyeBall3Color: "#60A541",
-      gradientColor1: "#5C8B29",
-      gradientColor2: "#25492F",
-      gradientType: "radial",
-      gradientOnEyes: false,
+      body: "square",
+      eye: "frame0",
+      eyeBall: "ball0",
+      bodyColor: "#af0013",
+      bgColor: "#ff5454",
+      eye1Color: "#af0013",
+      eye2Color: "#af0013",
+      eye3Color: "#af0013",
+      eyeBall1Color: "#af0013",
+      eyeBall2Color: "#af0013",
+      eyeBall3Color: "#af0013",
       logo: ""
   },
   size: 300,
-  download: false,
+  download: true,
   file: "svg"
 };
 
