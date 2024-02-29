@@ -49,7 +49,17 @@ const requestData = {
 axios.post('https://api.qrcode-monkey.com/qr/custom', requestData)
   .then(response => {
       console.log("QR Code URL:", response.data.imageUrl);
+      const qrurl = response.data.imageUrl;
+      displayqrcode(qrurl)
   })
   .catch(error => {
       console.error("Error making request:", error);
   });
+
+  function displayqrcode(qrurl){
+    const qrimg = document.createElement('img');
+    qrimg.src = qrurl;
+    const qrcontainer = document.getElementById('qrcontainer');
+    qrcontainer.appendChild(qrimg);
+
+  }
