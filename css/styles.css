@@ -32,6 +32,7 @@ body{
 
 .navbar{
     display:none;
+    
 }
 
 .navbar ul {
@@ -45,6 +46,8 @@ body{
     display: flex;
     justify-content: space-between;
     width:100vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the values as needed */
+
 }
 .navbar li {
     float:left;
@@ -137,24 +140,35 @@ body{
     src: url("/assets/fonts/KodeMono-VariableFont_wght.ttf");    
 }
 
-.button{
-    background: none;
-    border: 2px solid var(--secondary);
-    color: var(--secondary);
-    padding: 6px 12px;
-    border-radius: 20px;
-    display: inline-block;
-}
 .button:hover{
     background-color: var(--secondary);
     color:var(--primary)
 }
+.button label,a {
+    user-select: none;
+    background: var(--dropdown-label);
+    color: var(--secondary);
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: vw;
+    transition: background-color 0.5s  ease;
+    margin:6px;
+    padding:0px;
+    border:white solid 1px;
+  }
+
+  .button label:Hover, .button a:Hover{
+    background: var(--dropdown-label-hover);
+  }
+
 input,textarea{
     background:var(--primary);
     padding:10px 16px;
     border-radius: 20px;
     border: 2px solid var(--secondary);
-
 }
 /*fonts*/
 @font-face {
@@ -165,10 +179,6 @@ input,textarea{
 h1,h2,h3,h4{
     color: var(--secondary);
     font-weight: normal;
-}
-
-p,a,li{
-    color:var(--secondary)
 }
 
 h1,h3{
@@ -200,6 +210,10 @@ h1,h3{
     #menu{
       display:none;
     }
+
+    #menu label{
+        width:80vw;
+    }
   
     #menu:checked + label {
         background-color: var(--menu-checked);
@@ -211,25 +225,6 @@ h1,h3{
       background-color: var(--menu-checked-hover);
       color: var(--primary);
   }
-    label,a {
-      user-select: none;
-      background: var(--dropdown-label);
-      color: var(--secondary);
-      text-align: center;
-      font-size: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: vw;
-      transition: background-color 0.5s  ease;
-      margin:6px;
-      padding:0px;
-      border:white solid 1px;
-    }
-  
-    label:Hover,a:Hover{
-      background: var(--dropdown-label-hover);
-    }
   
     .dropdown{
       display:none;
@@ -291,7 +286,7 @@ h1,h3{
     .box{
         color:white;
         font: 25px;
-        background-color: #222b3a;
+        background-color: #222b3ac9;
         text-align: center;
         min-height: 80vh;
         min-width: 80vw;
@@ -305,7 +300,64 @@ h1,h3{
         border-image-repeat: stretch stretch; 
         border-style:solid;
         image-rendering: pixelated;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the values as needed */
     }
+
+    .collection{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items:center;
+    }
+    
+    .collection-item{
+        position: relative; /* Add this to establish a stacking context */
+        width:65vw;
+        height:65vw;
+        background-color: lightblue;
+        margin:2vw;
+        background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='59' height='59' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(144, 205, 244,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 0L0 20z' fill='rgba(254, 252, 191,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 40z' fill='%23ecc94b'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+        border:2px solid white;
+    }
+
+    .collection-item img{
+        width:inherit;
+        height:inherit;
+        image-rendering:auto;
+    }
+
+    .collection-item:hover{
+        border:2px solid black;
+    }
+    
+    .collection-item:hover .collection-overlay{
+        opacity: 1;
+        cursor:pointer;
+    }
+    
+    .collection-overlay{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 20%;
+        background-color: #000000ab;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .headbar{
+        position:block;
+        padding:2vw;
+        margin: 2vw 5vw;
+        border: 2px solid white;
+        font-size: 2em;
+    }
+    
+
     
 
 /*tablet style*/
@@ -322,6 +374,15 @@ h1,h3{
     .navbar{
         display:flex;
     }
+    .collection-item{
+        width:35vw;
+        height:35vw;
+        background-color: lightblue;
+        margin:2vw;
+        background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='59' height='59' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(144, 205, 244,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 0L0 20z' fill='rgba(254, 252, 191,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 40z' fill='%23ecc94b'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+        border:2px solid white;
+    }
+    
 }
 /*laptop style*/
 @media screen and (min-width:960px){
@@ -331,6 +392,14 @@ h1,h3{
     .overlay{
         display:none;
     }
+    .collection-item{
+        width:25vw;
+        height:25vw;
+        background-color: lightblue;
+        margin:2vw;
+        background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='59' height='59' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(144, 205, 244,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 0L0 20z' fill='rgba(254, 252, 191,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 40z' fill='%23ecc94b'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+        border:2px solid white;
+    }
 }
 /*desktop style*/
 @media screen and (min-width:1200px){
@@ -339,6 +408,33 @@ h1,h3{
     }
     .overlay{
         display:none;
+    }
+    .collection-item{
+        width:25vw;
+        height:25vw;
+        background-color: lightblue;
+        margin:2vw;
+        background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='59' height='59' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(144, 205, 244,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 0L0 20z' fill='rgba(254, 252, 191,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 40z' fill='%23ecc94b'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+        border:2px solid white;
+    }
+
+    .collection-item:hover .collection-overlay{
+        opacity: 1;
+        cursor:pointer;
+    }
+    
+    .collection-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000000ab;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
