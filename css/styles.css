@@ -29,10 +29,40 @@ body{
     overflow-x:hidden;
     font-family: 'Main Font';
 }
+.marquee {
+    --gap: 1rem;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+    padding:10px;
+    background-color: #0051ffbe;
+  }
+  
+.marquee__content {
+flex-shrink: 0;
+display: flex;
+justify-content: space-around;
+min-width: 100%;
+gap: var(--gap);
+animation: scroll 10s linear infinite;
+
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+.marquee:hover .marquee_content{
+    animation-play-state: paused;
+}
 
 .navbar{
     display:none;
-    
 }
 
 .navbar ul {
@@ -53,8 +83,24 @@ body{
     float:left;
 }
 .navbar li a {
-    padding:10px 25px;
-    display:block;
+    user-select: none;
+    background: var(--dropdown-label);
+    color: var(--secondary);
+    text-align: center;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8vw;
+    transition: background-color 0.5s  ease;
+    margin:12px;
+    padding:10px;
+    border:white solid 1px;
+}
+.navbar li a:Hover {
+    background: var(--dropdown-label-hover);
+    color: var(--secondary);
+    cursor:pointer;
 }
 .active{
     background-color: white;
@@ -86,8 +132,41 @@ body{
 }
 
 .right{
-    filter: invert(100%) sepia(0%) saturate(1283%) hue-rotate(185deg)       brightness(122%) contrast(100%);
+    margin:0px;
+    padding:0px;
+    padding:10px;
+    background-color: var(--dropdown-label);
+    border: 2px solid black;
+    display:inline-block;
+    position:relative;
 }
+
+
+.right:Hover{
+    background-color: var(--dropdown-label-hover);
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.bubble {
+    display: absolute;
+    top:100px;
+    right:10px;
+    transform: translate(-30%, -250%); /* Center the bubble */
+    width: 30px; /* Set the width */
+    height: 30px; /* Set the height */
+    border-radius: 50%; /* Make it round */
+    border: 2px solid white;
+    background-color: #0051ff; /* Set the background color */
+    color: white; /* Set the text color */
+    font-size: 20px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 #glass {
     display: none;
 }
@@ -144,7 +223,7 @@ body{
     background-color: var(--secondary);
     color:var(--primary)
 }
-.button label,a {
+.dropdown label, .dropdown > a{
     user-select: none;
     background: var(--dropdown-label);
     color: var(--secondary);
@@ -211,8 +290,20 @@ h1,h3{
       display:none;
     }
 
-    #menu label{
-        width:80vw;
+    #menu ~ label {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; /* Change width to 100% to fill the entire container */
+        background-color: rgba(0, 0, 0, 0.719);
+        color:white;
+        height:50px;
+        font-size:25px;
+        transition: .3s ease;
+    }
+    #menu ~ label:Hover {
+        background-color: rgba(0, 0, 0, 0.884);
     }
   
     #menu:checked + label {
@@ -244,7 +335,7 @@ h1,h3{
         display: none;
     }
     
-    .dropdown label, a{
+    .dropdown label, .dropdown a{
       border-radius:2px;
       font-size:18px;
       padding:0px;
@@ -347,6 +438,7 @@ h1,h3{
         display: flex;
         justify-content: center;
         align-items: center;
+        color:white;
     }
 
     .headbar{
@@ -362,18 +454,8 @@ h1,h3{
 
 /*tablet style*/
 @media screen and (min-width:620px){
-    body{
-        background: blue;
-    }
-    #menu:checked ~ .dropdown, #menu:checked + label, #menu + label {
-        display:none;
-    }
-    .overlay{
-        display:none;
-    }
-    .navbar{
-        display:flex;
-    }
+
+
     .collection-item{
         width:35vw;
         height:35vw;
@@ -386,11 +468,15 @@ h1,h3{
 }
 /*laptop style*/
 @media screen and (min-width:960px){
-    body{
-        background: yellow;
+
+    #menu:checked ~ .dropdown, #menu:checked + label, #menu + label {
+        display:none;
     }
     .overlay{
         display:none;
+    }
+    .navbar{
+        display:flex;
     }
     .collection-item{
         width:25vw;
@@ -435,6 +521,7 @@ h1,h3{
         display: flex;
         justify-content: center;
         align-items: center;
+        color:white;
     }
 }
 

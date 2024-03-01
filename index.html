@@ -9,6 +9,19 @@
     <script src="/js/main.js"></script>
 </head>
 <body>
+  <div class="marquee">
+    <ul class="marquee__content">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <!-- Mirrors the content above -->
+    <ul class="marquee__content" aria-hidden="true">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
   <div class="title-container">
     <div class="middle">
     <img src="/assets/img/qrlogo.png" style="border: 2px solid black; width: 100px;" alt="Image">
@@ -17,10 +30,12 @@
     <div class="middle">
     <a href="cart.html">
     <img src="/assets/img/cart.svg" class="right" alt="Image">
+    <div class="bubble">9+</div>
     </a>
     <input type="checkbox" id="glass">
-    <label for="glass" class="button">
+    <label for="glass">
     <img src="/assets/img/glass.svg" class="right" alt="Image">
+    <div class="bubble" style="background-color: transparent;box-shadow: none;border:2px solid transparent;"></div>
     </label>
     </div>
   </div>
@@ -34,13 +49,13 @@
   </div>
   <div class="navbar"><ul>
     <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#news" class="button">Shirts</a></li>
-    <li><a href="#contact" class="button">Crewnecks</a></li>
-    <li><a href="#about" class="button">Hoodies</a></li>
-    <li><a href="#about" class="button">Accessories</a></li>
-    <li><a href="#about" class="button">Others :O</a></li>
-    <li><a href="#about" class="button">About</a></li>
-    <li><a href="#about" class="button">Contact</a></li>
+    <li><a href="#news">Shirts</a></li>
+    <li><a href="#contact">Crewnecks</a></li>
+    <li><a href="#about">Hoodies</a></li>
+    <li><a href="#about">Accessories</a></li>
+    <li><a href="#about">Others :O</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#about">Contact</a></li>
   </ul></div>
     <input type="checkbox" id="menu">   
     <label for="menu">Menu
