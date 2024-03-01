@@ -1,21 +1,13 @@
 /*variables*/
 :root{
-    --primary:black;
+    --primary:rgb(0, 0, 0);
     --secondary:white;
     --c_1:red;
     --c_2:blue;
     --c_3:yellow;
     --primary-Hover:black;
-    --dropdown-label:black;
-    --subdropdown-label:#383181;
-    --subdropdown-label-alt:#404c85;
-    --subsubdropdown-label:#6ea3ff;
-    --subsubdropdown-label-alt:#3177f1;
-    --dropdown-label-hover:#222b3a;
-    --subdropdown-label-hover:#9ab6e2;
-    --subdropdown-label-alt-hover:black;
-    --subsubdropdown-label-hover:#b6f0fa;
-    --subsubdropdown-label-alt-hover:black;
+    --dropdown-label:rgb(134, 131, 95);
+    --dropdown-label-hover:#68654a;
     --menu-checked:#3177f1;
     --menu-checked-hover: #2b65ca;
 }
@@ -44,18 +36,21 @@ body{
 
 .navbar ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 20px;
+    padding: 0px;
     overflow: hidden;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.514);
+    border: 2px solid white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    width:100vw;
 }
 .navbar li {
     float:left;
-    padding:5px;
-    margin:5px;
 }
 .navbar li a {
-    padding:10px;
+    padding:10px 25px;
     display:block;
 }
 .active{
@@ -65,19 +60,24 @@ body{
 .title-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Optional: Horizontally center the content */
+    justify-content: space-between; /* Optional: Horizontally center the content */
     text-align: center;
     padding: 10px;
 }
 
+.middle {
+    display:flex;
+    align-items: center;
+}
+
 .title-container p {
-    font-size: 45px;
+    font-size: 55px;
     color: white;
     margin: 0; /* Remove default margin */
 }
 
 .title-container img {
-    width: 70px;
+    width: 20px;
     height: auto;
     margin: 10px; /* Optional: Add spacing between text and images */
 }
@@ -103,7 +103,7 @@ body{
     justify-content: center;
     text-align: center;
     color: white;
-    background-color: #222b3acb;
+    background-color: #121822ea;
     border: 2px solid white;
     border-radius:2px;
 }
@@ -113,6 +113,28 @@ body{
     height:auto;
     right:5%;
     top:15%;
+}
+.searchbox input[type=text]{
+    width:60vw;
+    color:white;
+    font-size: 30px;
+    border: 2px solid var(--c_2);
+    border-radius: 0px;
+    font-family: 'Main Font';
+    src: url("/assets/fonts/KodeMono-VariableFont_wght.ttf");
+}
+
+.searchbox button{
+    color:white;
+    width: 85px;
+    height: 60px;
+    font-size: 20px;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Main Font';
+    src: url("/assets/fonts/KodeMono-VariableFont_wght.ttf");    
 }
 
 .button{
@@ -202,7 +224,7 @@ h1,h3{
       transition: background-color 0.5s  ease;
       margin:6px;
       padding:0px;
-      border:blue solid 1px;
+      border:white solid 1px;
     }
   
     label:Hover,a:Hover{
@@ -270,13 +292,19 @@ h1,h3{
         color:white;
         font: 25px;
         background-color: #222b3a;
-        border: 2px solid #2b65ca;
-        border-radius: 2px;
         text-align: center;
         min-height: 80vh;
         min-width: 80vw;
         padding:15px;
         margin:25px;
+
+        border-image-source: url(/assets/img/borderimg7.png);   
+        border-image-slice: 60 60 60 60;
+        border-image-width: 20px 20px 20px 20px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch; 
+        border-style:solid;
+        image-rendering: pixelated;
     }
     
 
@@ -292,7 +320,7 @@ h1,h3{
         display:none;
     }
     .navbar{
-        display:inline;
+        display:flex;
     }
 }
 /*laptop style*/
