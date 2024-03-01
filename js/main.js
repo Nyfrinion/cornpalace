@@ -53,3 +53,8 @@ axios.post('https://api.qrcode-monkey.com/qr/custom', requestData)
     qrcontainer.appendChild(qrimg);
 
   }
+  function closeSearch(){
+    document.getElementById('glass').checked = false;
+    document.querySelector('.searchbox').style.display = 'none';
+    console.log('HEY');
+  }

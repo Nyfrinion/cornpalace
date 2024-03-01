@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>QR Clothes</title>
+    <title>CART</title>
     <script src="/node_modules/axios/dist/axios.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/cart.js"></script>
 </head>
 <body>
   <div class="title-container">
-    <img src="/assets/img/qrlogo.png" style="border: 2px solid black;" alt="Image">
-    <p style="  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">QR Clothes</p>
+    <img src="/assets/img/qrcode.png" alt="Image">
+    <p>QR Clothes</p>
     <a href="cart.html">
     <img src="/assets/img/cart.svg" class="right" alt="Image">
     </a>
@@ -21,19 +22,11 @@
     </label>
   </div>
   <div class="searchbox">
-    <a href="#" onclick="closeSearch()">
-    <img src="/assets/img/x.svg" class="right" alt="Image"></a><br>
     <form action="/search" method="GET">
       <input type="text" name="q" placeholder="Search...">
       <button type="submit" style="margin-left: 10px;">Search</button>
     </form>
   </div>
-  <div class="navbar"><ul>
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#news">Shop</a></li>
-    <li><a href="#contact">About</a></li>
-    <li><a href="#about">Contact</a></li>
-  </ul></div>
     <input type="checkbox" id="menu">   
     <label for="menu">Menu
       <img src="https://www.svgrepo.com/show/491244/hamburger.svg" class="logo">
@@ -45,6 +38,6 @@
           <a class="align">Contact</a>
         </div>
     </div>
-    <div class="box"></div>
+    <div class="box">SHOPPING CART</div>
 </body>
 </html>
