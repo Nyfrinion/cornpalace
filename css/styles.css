@@ -478,9 +478,13 @@ h1,h3{
         height:inherit;
         width: inherit;
         image-rendering: auto;
+        background-color: transparent;
+
     }
     .thumbnails{
         height:50vw;
+        background-color: transparent;
+
     }
     .description{
         height:50vw;
@@ -489,6 +493,8 @@ h1,h3{
     }
     .payment{
         height:35vw;
+        background-color: transparent;
+
     }
     .sale-notification{
         bottom:-30px;
@@ -512,7 +518,22 @@ h1,h3{
         background-color: #0051ff;
         cursor: pointer;
     }
-    
+    .bluebutton{
+        background-color: var(--menu-checked);
+        border: 1px solid white;
+        color: white;
+        width:20vw;
+        border-radius: 0px;
+        font-size:2em;
+        font-family: 'Main Font';
+
+    }
+    .bluebutton:hover{
+        background-color: var(--menu-checked-hover);
+        border: 1px solid white;
+        color: white;
+        
+    }
 /*tablet style*/
 @media screen and (min-width:680px){
 
@@ -536,6 +557,7 @@ h1,h3{
     }
     .thumbnails{
         height:30vw;
+        width:40vw;
     }
     .description{
         height:50vw;

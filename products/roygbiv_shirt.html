@@ -80,7 +80,26 @@
         <div class="product-grid-item main-image">
           <img src="/assets/img/shirt1.png">
         </div>
-        <div class="product-grid-item payment"></div>
+        <div class="product-grid-item payment">
+          <p style="font-size: 1.5em;">$80.00 <br><br> Shipping is calculated at checkout <br><br></pp>
+          <form action="/action_page.php">
+            <label for="color">Choose a Color:</label>
+            <select name="color" id="color">
+              <option value="black">Black</option>
+              <option value="white">White</option>
+            </select><br><br>
+          </form>
+          <form action="/action_page.php">
+            <label for="sizes">Choose a Size:</label>
+            <select name="sizes" id="sizes">
+              <option value="small">S</option>
+              <option value="medium">M</option>
+              <option value="large">L</option>
+              <option value="xlarge">XL</option>
+            </select><br><br>
+            <input type="submit" class="bluebutton" value="Add to Cart">
+          </form>
+        </div>
         <div class="product-grid-item thumbnails"></div>
         <div class="product-grid-item description">his shirt blah blah blah..
           s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
@@ -97,5 +116,6 @@
         </div>
       </div>
     </div>
+    <div class="sale-notification">Get 10% OFF!!</div>
 </body>
 </html>
