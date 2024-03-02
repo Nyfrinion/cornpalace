@@ -37,6 +37,8 @@ body{
     gap: var(--gap);
     padding:10px;
     background-color: #0051ffbe;
+    margin-top: 5px;
+    border: 1px solid white;
   }
   
 .marquee__content {
@@ -45,7 +47,7 @@ display: flex;
 justify-content: space-around;
 min-width: 100%;
 gap: var(--gap);
-animation: scroll 10s linear infinite;
+animation: scroll 40s linear infinite;
 
 }
 
@@ -57,7 +59,7 @@ animation: scroll 10s linear infinite;
         transform: translateX(calc(-100% - var(--gap)));
     }
 }
-.marquee:hover .marquee_content{
+.marquee:hover .marquee__content{
     animation-play-state: paused;
 }
 
@@ -79,6 +81,7 @@ animation: scroll 10s linear infinite;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the values as needed */
 
 }
+
 .navbar li {
     float:left;
 }
@@ -102,9 +105,9 @@ animation: scroll 10s linear infinite;
     color: var(--secondary);
     cursor:pointer;
 }
-.active{
-    background-color: white;
-    color:black;
+.navbar li a.active{
+    background: var(--menu-checked);
+    color:white;
 }
 .title-container {
     display: flex;
@@ -448,14 +451,77 @@ h1,h3{
         border: 2px solid white;
         font-size: 2em;
     }
-    
+    .product-grid-mobile{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap:2px;
+    }
+    .product-grid{
+        display:none;
+        grid-template-columns: 1fr 1fr;
+        gap:2px;
+    }
+    .product-grid-item{
+        background-color: black;
+        width:inherit;
+        padding: 10px;
+        margin: 10px;
+        height:35vw;
+        text-align: center;
+    }
+    .main-image{
+        height:70vw;
+        background-color: rgba(0, 0, 0, 0.575);
+        border: 1px solid white;
+    }
+    .main-image > img{
+        height:inherit;
+        width: inherit;
+        image-rendering: auto;
+    }
+    .thumbnails{
+        height:50vw;
+    }
+    .description{
+        height:50vw;
+        font-size: 1em;
+        background-color: transparent;
+    }
+    .payment{
+        height:35vw;
+    }
+    .sale-notification{
+        bottom:-30px;
+        position:fixed;
+        left:15px;
+        width:200px;
+        height:60px;
+        border: 1px solid white;
+        border-radius: 10px;
+        background-color: #0051ffc2;
+        color:white;
+        font-size: 20px;
+        text-align: center;
+        padding:5px;
+        overflow: hidden;
+        transition: .5s ease;
 
+    }
+    .sale-notification:hover{
+        height: 75px;
+        background-color: #0051ff;
+        cursor: pointer;
+    }
     
-
 /*tablet style*/
-@media screen and (min-width:620px){
+@media screen and (min-width:680px){
 
-
+    .product-grid-mobile{
+        display:none;
+    }
+    .product-grid{
+        display:grid;
+    }
     .collection-item{
         width:35vw;
         height:35vw;
@@ -464,10 +530,24 @@ h1,h3{
         background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='59' height='59' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(144, 205, 244,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 0L0 20z' fill='rgba(254, 252, 191,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 40z' fill='%23ecc94b'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
         border:2px solid white;
     }
-    
+    .main-image{
+        height:40vw;
+        width:40vw;
+    }
+    .thumbnails{
+        height:30vw;
+    }
+    .description{
+        height:50vw;
+        font-size:1em;
+    }
+    .payment{
+        height:30vw;
+    }
 }
 /*laptop style*/
 @media screen and (min-width:960px){
+
 
     #menu:checked ~ .dropdown, #menu:checked + label, #menu + label {
         display:none;
@@ -485,6 +565,10 @@ h1,h3{
         margin:2vw;
         background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='59' height='59' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(144, 205, 244,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 0L0 20z' fill='rgba(254, 252, 191,1)'/%3E%3Cpath d='M0 20L20 40L40 20L20 40z' fill='%23ecc94b'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
         border:2px solid white;
+    }
+    .description{
+        height:50vw;
+        font-size:1.5em;
     }
 }
 /*desktop style*/
