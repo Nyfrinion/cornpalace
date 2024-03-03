@@ -1,17 +1,26 @@
-// Import Axios library
+  // JavaScript code for form validation and submission
+  document.getElementById("productForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission; keeps it from reloading the page or something
 
-document.addEventListener('DOMContentLoaded', function() {
-    const glassCheckbox = document.getElementById('glass');
-    const searchbox = document.querySelector('.searchbox');
+    console.log('LOGGED')
+    var selectedColor = document.getElementById("color").value;
+    var selectedSize = document.getElementById("size").value;
+    var itemName = document.querySelector(".headbar").value;
+    var link1 = document.getElementById("link1").value;
+    var link2 = document.getElementById("link2").value;
+    var link3 = document.getElementById("link3").value;
+    var link4 = document.getElementById("link4").value;
+    var link5 = document.getElementById("link5").value;
+    var link6 = document.getElementById("link6").value;
+    var link7 = document.getElementById("link7").value;
 
-    glassCheckbox.addEventListener('change', function() {
-      if (this.checked) {
-        searchbox.style.display = 'flex';
-      } else {
-        searchbox.style.display = 'none';
-      }
-    });
-});
+    var cartItems = JSON.parse(localStorage.getItem("cart")) || []; // Get existing cart items or initialize an empty array
+    var newItem = { color: selectedColor, size: selectedSize }; // Create new item object with entered color and size
+    cartItems.push(newItem); // Add new item to cart
+    localStorage.setItem("cart", JSON.stringify(cartItems)); // Store updated cart in localStorage
+    console.log(newItem)
+  });
+
 
 // Define request data
 const requestData = {
