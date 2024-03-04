@@ -1,8 +1,11 @@
 // Import Axios library
 
 document.addEventListener('DOMContentLoaded', function() {
+
     const glassCheckbox = document.getElementById('glass');
     const searchbox = document.querySelector('.searchbox');
+
+    updateCartCount();
 
     glassCheckbox.addEventListener('change', function() {
       if (this.checked) {
@@ -35,6 +38,18 @@ const requestData = {
   file: "svg"
 };
 
+function updateCartCount(){
+  var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  var cartNum = cartItems.length;
+  if (cartNum > 0 && cartNum < 99) {
+    document.querySelector('.bubble').textContent = cartNum;
+  }else if (cartNum >= 99){
+    document.querySelector('.bubble').textContent = "99+";
+  }else{
+    document.querySelector('.bubble').textContent = "0";
+  }
+}
+
 // Make POST request using Axios
 axios.post('https://api.qrcode-monkey.com/qr/custom', requestData)
   .then(response => {
@@ -57,4 +72,12 @@ axios.post('https://api.qrcode-monkey.com/qr/custom', requestData)
     document.getElementById('glass').checked = false;
     document.querySelector('.searchbox').style.display = 'none';
     console.log('HEY');
+  }
+  function closeNotification(){
+    event.preventDefault();
+    document.querySelector('.cart-notification').style.top = '-200px';
+  }
+
+  function openNotification(){
+    document.querySelector('.cart-notification').style.top = '-120px'
   }
