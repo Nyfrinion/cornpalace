@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>QR Clothes</title>
+    <script src="/node_modules/axios/dist/axios.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/cart.js"></script>
+</head>
+<body>
+  <div class="cart-notification">
+    <span></span>
+    <button class="view-cart-button">View Cart</button><br><br>
+    <span style="font-size: 20px; margin-left: 8%;">Item Added to your cart!    <a href="#" onclick="closeNotification()">
+      <img src="/assets/img/x.svg" style="width:15px; height:auto;filter: invert(100%) sepia(0%) saturate(1283%) hue-rotate(185deg)       brightness(122%) contrast(100%);
+      " alt="Image"></a></span>
+  </div>
+  <div class="marquee">
+    <ul class="marquee__content">
+      <li>*Welcome to QR Clothes Shop!!*</li>
+      <li>*Customize your clothing with links to whatever you want!*</li>
+      <li>*Subscribe to the newsletter and get 10% off your first order*</li>
+      <li>*Free Shipping on orders above 1 billion dollars*</li>
+      <li>*No Returns*</li>
+
+    </ul>
+    <!-- Mirrors the content above -->
+    <ul class="marquee__content" aria-hidden="true">
+      <li>*Welcome to QR Clothes Shop!!*</li>
+      <li>*Customize your clothing with links to whatever you want!*</li>
+      <li>*Subscribe to the newsletter and get 10% off your first order*</li>
+      <li>*Free Shipping on orders above 1 billion dollars*</li>
+      <li>*No Returns*</li>
+
+    </ul>
+  </div>
+  <div class="title-container">
+    <div class="middle">
+    <img src="/assets/img/qrlogo.png" style="border: 2px solid black; width: 100px;" alt="Image">
+    <p style="  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">QR City</p>
+    </div>
+    <div class="middle">
+    <a href="cart.html">
+    <img src="/assets/img/cart.svg" class="right" alt="Image">
+    <div class="bubble">9+</div>
+    </a>
+    <input type="checkbox" id="glass">
+    <label for="glass">
+    <img src="/assets/img/glass.svg" class="right" alt="Image">
+    <div class="bubble" style="cursor:default; background-color: transparent;box-shadow: none;border:2px solid transparent;"></div>
+    </label>
+    </div>
+  </div>
+  <div class="searchbox">
+    <a href="#" onclick="closeSearch()">
+    <img src="/assets/img/x.svg" class="right" alt="Image"></a><br>
+    <form action="/search" method="GET">
+      <input type="text" name="q" placeholder="Search...">
+      <button type="submit" style="margin-left: 10px;">Search</button>
+    </form>
+  </div>
+  <div class="navbar"><ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">Shirts</a></li>
+    <li><a href="#contact">Crewnecks</a></li>
+    <li><a href="#about">Hoodies</a></li>
+    <li><a href="#about">Accessories</a></li>
+    <li><a href="#about">Others :O</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#about">Contact</a></li>
+  </ul></div>
+    <input type="checkbox" id="menu">   
+    <label for="menu">Menu
+      <img src="https://www.svgrepo.com/show/491244/hamburger.svg" class="logo">
+    </label>
+    <div class="dropdown">
+          <a class="align; button">Home</a>
+          <a href=shop.html class="align; button">Shop</a>
+          <a class="align; button">About</a>
+          <a class="align; button">Contact</a>
+        </div>
+    </div>
+    <div class="box">
+      <div class="headbar">Cart</div>
+      <table class="cart">
+        <tr>
+          <th>Thumbnail</th>
+          <th>Product</th>
+          <th>Color/Size</th>
+          <th>QR Codes</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Remove</th>
+        </tr>
+        <tr>
+          <td><img src="/assets/img/shirt1.png"></td>
+          <td>ROYGBIV T-Shirt</td>
+          <td>Black/L</td>
+          <td>QR</td>
+          <td>4</td>
+          <td>N/A</td>
+          <td>Remove</td>
+        </tr>
+        <tr>
+          <td><img src="/assets/img/shirt1.png"></td>
+          <td>ROYGBIV T-Shirt</td>
+          <td>Black/L</td>
+          <td>QR</td>        
+          <td>4</td>
+          <td>N/A</td>
+          <td>Remove</td>
+        </tr>
+      </table>
+    <div class="sale-notification">Get 10% OFF!!</div>
+</body>
+</html>

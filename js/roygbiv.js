@@ -39,13 +39,4 @@ function addToCart(){
   
       openNotification();
     }
-
-    console.log(link1);
-    console.log(link2);
-    console.log(link3);
-    console.log(link4);
-    console.log(link5);
-    console.log(link6);
-    console.log(link7);
-
 }
