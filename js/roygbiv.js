@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function addToCart(){
     var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
+    var name = document.querySelector('.headbar').value;
     var color = document.getElementById('color').value;
     var size = document.getElementById('sizes').value;
     var link1 = document.getElementById('link1').value;
@@ -33,7 +34,7 @@ function addToCart(){
       alert("Make sure to fill everything out!");
       console.log('empty');
     }else{
-      var newItem = {color: color, size: size};
+      var newItem = {name: name, color: color, size: size};
       cartItems.push(newItem);
       localStorage.setItem("cart", JSON.stringify(cartItems));
   

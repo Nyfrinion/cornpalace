@@ -570,28 +570,23 @@ h1,h3{
     .view-cart-button:hover{
         background-color: #2b59a8;
     }
-    .cart{
-        display:flex;
-        align-items: center;
-        justify-content: center;
+
+    .cart-table{
+        width:100%;
         border: 1px solid white;
         border-radius: 15px;
     }
-    .cart td{
+    .cart-table td, .cart-table th{
         border: 1px solid blue;
         margin:10px;
     }
 
-    .cart td img{
+    .cart-table td img{
         width:65px;
         height: auto;
         image-rendering: auto;
     }
-    .cart th{
-        border: 1px solid red;
-        margin:10px;
-        padding:10px;
-    }
+
 /*tablet style*/
 @media screen and (min-width:680px){
 
