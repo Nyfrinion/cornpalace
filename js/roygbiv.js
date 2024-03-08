@@ -30,19 +30,6 @@ function addToCart(){
     var link5 = document.getElementById('link5').value;
     var link6 = document.getElementById('link6').value;
     var link7 = document.getElementById('link7').value;
-    var link8 = 'none'
-    var link9 = 'none'
-    var link10 = 'none'
-    var link11 = 'none'
-    var link12 = 'none'
-    var link13 = 'none'
-    var link14 = 'none'
-    var link15 = 'none'
-    var link16 = 'none'
-    var link17 = 'none'
-    var link18 = 'none'
-    var link19 = 'none'
-    var link20 = 'none'
     var quantity = 1;
 
 
@@ -86,6 +73,10 @@ function addToCart(){
 
       localStorage.setItem("cart", JSON.stringify(cartItems));
   
-      openNotification();
-    }
+      closeNotification();
+      setTimeout(function() {
+        openNotification();
+    }, 250);
+    
+  }
 }

@@ -39,8 +39,20 @@ function loadCart(){
             var itemPriceCell = document.createElement('td');
 
             itemNameCell.innerHTML = '<img src="/assets/img/shirt1.png"></img>';
-            itemInfoCell.innerHTML = cartItem.size + '<br>' + cartItem.color;
+            itemInfoCell.innerHTML = cartItem.size + '<br>' + cartItem.color + '<br>' + "QR Codes: ";
             itemPriceCell.textContent = cartItem.color;
+
+            var select = document.createElement('select');
+            for (var i = 1; i <= 20; i++) {
+                var linkKey = 'link' + i;
+                if (cartItem[linkKey]) {
+                    var option = document.createElement('option');
+                    option.value = cartItem[linkKey];
+                    option.textContent = cartItem[linkKey];
+                    select.appendChild(option);
+                }
+            }
+            itemInfoCell.appendChild(select);
 
             row.appendChild(itemNameCell);
             row.appendChild(itemInfoCell);
