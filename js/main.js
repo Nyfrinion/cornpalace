@@ -40,10 +40,15 @@ const requestData = {
 
 function updateCartCount(){
   var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-  var cartNum = cartItems.length;
-  if (cartNum > 0 && cartNum < 99) {
-    document.querySelector('.bubble').textContent = cartNum;
-  }else if (cartNum >= 99){
+  var cartTotal = 0;
+
+  for (var i = 0; i < cartItems.length; i++) {
+    var item = cartItems[i];
+    cartTotal = cartTotal + item.quantity;
+  }
+  if (cartTotal > 0 && cartTotal < 99) {
+    document.querySelector('.bubble').textContent = cartTotal;
+  }else if (cartTotal >= 99){
     document.querySelector('.bubble').textContent = "99+";
   }else{
     document.querySelector('.bubble').textContent = "0";

@@ -80,8 +80,10 @@ function addToCart(){
       }
        
 
+      if (!linksMatch){
+        cartItems.push(newItem);
+      }
 
-      cartItems.push(newItem);
       localStorage.setItem("cart", JSON.stringify(cartItems));
   
       openNotification();
