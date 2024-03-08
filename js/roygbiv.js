@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
 function addToCart(){
     var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
-    var name = document.querySelector('.headbar').value;
+    var name = document.querySelector('.headbar').textContent;
+    console.log(name);
     var color = document.getElementById('color').value;
     var size = document.getElementById('sizes').value;
     var link1 = document.getElementById('link1').value;
@@ -29,12 +30,57 @@ function addToCart(){
     var link5 = document.getElementById('link5').value;
     var link6 = document.getElementById('link6').value;
     var link7 = document.getElementById('link7').value;
+    var link8 = 'none'
+    var link9 = 'none'
+    var link10 = 'none'
+    var link11 = 'none'
+    var link12 = 'none'
+    var link13 = 'none'
+    var link14 = 'none'
+    var link15 = 'none'
+    var link16 = 'none'
+    var link17 = 'none'
+    var link18 = 'none'
+    var link19 = 'none'
+    var link20 = 'none'
+    var quantity = 1;
+
 
     if (link1.length === 0 || link2.length === 0 || link3.length === 0 || link4.length === 0 || link5.length === 0 || link6.length === 0 || link7.length === 0){
       alert("Make sure to fill everything out!");
       console.log('empty');
     }else{
-      var newItem = {name: name, color: color, size: size};
+      var newItem = {name: name, color: color, size: size, quantity: quantity,
+        link1: link1, link2: link2, link3: link3,
+        link4: link4,link5: link5,link6: link6,
+        link7: link7,link8: link8,link9: link9,
+        link10: link10,link11: link11,link12: link12,
+        link13: link13,link14: link14,link15: link15,link16: link16,
+        link17: link17,link18: link18,link19: link19,
+        link20: link20};
+
+        for (var i = 0; i < cartItems.length; i++) {
+          var item = cartItems[i];
+          if (item.name === newItem.name && item.color === newItem.color && item.size === newItem.size) {
+              // Check if all links match
+              var linksMatch = true;
+              for (var j = 1; j <= 20; j++) {
+                  var linkKey = 'link' + j;
+                  if (item[linkKey] !== newItem[linkKey]) {
+                      linksMatch = false;
+                      break;
+                  }
+              }
+              if (linksMatch) {
+                  // If all links match, increment quantity and exit loop
+                  cartItems[i].quantity += 1;
+                  break;
+              }
+          }
+      }
+       
+
+
       cartItems.push(newItem);
       localStorage.setItem("cart", JSON.stringify(cartItems));
   
