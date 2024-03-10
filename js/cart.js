@@ -39,7 +39,7 @@ function loadCart(){
             var itemPriceCell = document.createElement('td');
 
             itemNameCell.innerHTML = '<img src="/assets/img/shirt1.png"></img>';
-            itemInfoCell.innerHTML = cartItem.size + '<br>' + cartItem.color + '<br>' + "QR Codes: ";
+            itemInfoCell.innerHTML = "Name: " + cartItem.name + "<br>Size: " + cartItem.size + '<br>Color: ' + cartItem.color + '<br>' + "QR Codes: ";
             itemPriceCell.textContent = cartItem.color;
 
             var select = document.createElement('select');

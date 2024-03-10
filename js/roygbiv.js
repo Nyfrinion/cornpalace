@@ -30,6 +30,19 @@ function addToCart(){
     var link5 = document.getElementById('link5').value;
     var link6 = document.getElementById('link6').value;
     var link7 = document.getElementById('link7').value;
+    var link8 = ''
+    var link9 = ''
+    var link10 = ''
+    var link11 = ''
+    var link12 = ''
+    var link13 = ''
+    var link14 = ''
+    var link15 = ''
+    var link16 = ''
+    var link17 = ''
+    var link18 = ''
+    var link19 = ''
+    var link20 = ''
     var quantity = 1;
 
 
