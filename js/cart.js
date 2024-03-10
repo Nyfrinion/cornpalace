@@ -1,3 +1,15 @@
+const express = require('express');
+const mysql = require('mysql');
+const app = express();
+
+const pool = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: 'Kime141618!',
+    database: 'shopdb'
+  });
+
+
 document.addEventListener('DOMContentLoaded', function() {
     loadCart();
 });
@@ -40,8 +52,21 @@ function loadCart(){
 
             itemNameCell.innerHTML = '<img src="/assets/img/shirt1.png"></img>';
             itemInfoCell.innerHTML = "Name: " + cartItem.name + "<br>Size: " + cartItem.size + '<br>Color: ' + cartItem.color + '<br>' + "QR Codes: ";
-            itemPriceCell.textContent = cartItem.color;
+            
+            pool.query('SELECT price FROM products WHERE name = ?', [cartItem.name], function(error, results, fields) {
+                if (error) {
+                    console.error('Error fetching price from database:', error);
+                    return;
+                }
 
+                if (results.length > 0) {
+                    var price = results[0].price;
+                    itemPriceCell.textContent = price;
+                } else {
+                    console.error('Product not found in database:', cartItem.name);
+                }
+            });
+            
             var select = document.createElement('select');
             for (var i = 1; i <= 20; i++) {
                 var linkKey = 'link' + i;

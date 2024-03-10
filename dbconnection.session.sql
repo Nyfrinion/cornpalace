@@ -50,3 +50,27 @@ CREATE TABLE `shopdb`.`order_details` (
     FOREIGN KEY (`order_id`) REFERENCES `shopdb`.`orders`(`order_id`),
     FOREIGN KEY (`product_id`) REFERENCES `shopdb`.`products`(`product_id`)
 );
+
+-- Insert category for shirts
+INSERT INTO `shopdb`.`category` (`name`)
+VALUES ('shirts');
+
+-- Insert category for hoodies
+INSERT INTO `shopdb`.`category` (`name`)
+VALUES ('hoodies');
+
+-- Insert category for pants
+INSERT INTO `shopdb`.`category` (`name`)
+VALUES ('pants');
+
+-- Insert category for hats
+INSERT INTO `shopdb`.`category` (`name`)
+VALUES ('hats');
+
+-- Insert category for umbrellas
+INSERT INTO `shopdb`.`category` (`name`)
+VALUES ('umbrellas');
+
+INSERT INTO `shopdb`.`products` (`category_id`,`name`,`price`)
+VALUES ('1','ROYGBIV Shirt','45.99');
+
