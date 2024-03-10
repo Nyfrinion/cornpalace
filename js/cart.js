@@ -1,6 +1,6 @@
-const express = require('express');
-const mysql = require('mysql');
-const app = express();
+//const express = require('express');
+//const mysql = require('mysql');
+//const app = express();
 
 const pool = mysql.createPool({
     host: 'localhost',
@@ -66,7 +66,7 @@ function loadCart(){
                     console.error('Product not found in database:', cartItem.name);
                 }
             });
-            
+
             var select = document.createElement('select');
             for (var i = 1; i <= 20; i++) {
                 var linkKey = 'link' + i;
