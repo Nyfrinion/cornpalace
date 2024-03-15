@@ -72,5 +72,5 @@ INSERT INTO `shopdb`.`category` (`name`)
 VALUES ('umbrellas');
 
 INSERT INTO `shopdb`.`products` (`category_id`,`name`,`price`)
-VALUES ('1','ROYGBIV Shirt','45.99');
+VALUES ('1','ROYGBIV T-Shirt','45.99');
 

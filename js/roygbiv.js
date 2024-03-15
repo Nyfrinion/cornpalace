@@ -21,6 +21,7 @@ function addToCart(){
 
     var name = document.querySelector('.headbar').textContent;
     console.log(name);
+    var product_id = 1; 
     var color = document.getElementById('color').value;
     var size = document.getElementById('sizes').value;
     var link1 = document.getElementById('link1').value;
@@ -50,7 +51,7 @@ function addToCart(){
       alert("Make sure to fill everything out!");
       console.log('empty');
     }else{
-      var newItem = {name: name, color: color, size: size, quantity: quantity,
+      var newItem = {name: name, product_id: product_id, color: color, size: size, quantity: quantity,
         link1: link1, link2: link2, link3: link3,
         link4: link4,link5: link5,link6: link6,
         link7: link7,link8: link8,link9: link9,
