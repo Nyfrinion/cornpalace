@@ -573,12 +573,24 @@ h1,h3{
 
     .cart-table{
         width:100%;
-        border: 1px solid white;
-        border-radius: 15px;
+        border: none;
+        padding:10px;
     }
     .cart-table td, .cart-table th{
-        border: 1px solid blue;
+        border: 2px solid rgb(80, 135, 255);
+        border-radius: 2px; 
         margin:10px;
+    }
+    .cart-table th{
+        border:none;
+    }
+
+    .cart-table a{
+        color: rgb(243, 243, 255);
+        transition: .3s ease; 
+    }
+    .cart-table a:hover{
+        color: red; 
     }
 
     .cart-table td img{
@@ -586,7 +598,30 @@ h1,h3{
         height: auto;
         image-rendering: auto;
     }
+    .checkout-buttons-container{
+        display:flex;
+        justify-content: right;
+        padding:10px;
+        margin:10px;
+        width:auto;
+        flex-wrap: wrap;
+    }
+    .checkout-button{
+        margin:10px;
+        font-size:1em;
+        font-family:'Main Font';
+    }
+    .subtotal{
+        display:flex;
+        justify-content: right;
+        margin:10px;
+        padding-right: 40px;
+        padding-top:30px;
+    }
 
+    input[type=number]{
+        background-color: white;
+    }
 /*tablet style*/
 @media screen and (min-width:680px){
 

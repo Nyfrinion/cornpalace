@@ -44,7 +44,8 @@ function updateCartCount(){
 
   for (var i = 0; i < cartItems.length; i++) {
     var item = cartItems[i];
-    cartTotal = cartTotal + item.quantity;
+    cartTotal = cartTotal + parseInt(item.quantity);
+    console.log('cartTotal: ' + cartTotal)
   }
   if (cartTotal > 0 && cartTotal < 99) {
     document.querySelector('.bubble').textContent = cartTotal;
