@@ -6,8 +6,8 @@
     --c_2:blue;
     --c_3:yellow;
     --primary-Hover:black;
-    --dropdown-label:rgb(134, 131, 95);
-    --dropdown-label-hover:#68654a;
+    --dropdown-label:rgb(216, 166, 16);
+    --dropdown-label-hover:#a96012;
     --menu-checked:#3177f1;
     --menu-checked-hover: #2b65ca;
     --notification:rgba(10, 0, 66, 0.726);
@@ -18,7 +18,19 @@ body,p,a,ul,li{
     margin:0;
     padding:0;
     text-decoration:none;
+    letter-spacing: 1px;
 }
+
+p a{
+    color:#0051ff;
+    transition: color 0.15s  ease;
+
+}
+p a:hover{
+    color:#ffbf00;
+}
+
+
 html, body {
     height: 100%;
 }
@@ -27,10 +39,79 @@ li{
 }
 /*base style*/
 body{
-    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='40' height='40' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(195, 218, 254,1)'/%3E%3Cpath d='M0 40a 9-9 0 0 0 9-9a 11-11 0 0 1 11-11a 9-9 0 0 0 9-9a 11-11 0 0 1 11-11v2a-9 9 0 0 0-9 9a-11 11 0 0 1-11 11a-9 9 0 0 0-9 9a-11 11 0 0 1-11 11zM0 0a 9-9 0 0 0 9-9h2a-11 11 0 0 1-11 11z' fill='rgba(79, 209, 197,1)'/%3E%3Cpath d='M0 0a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 0 9.5 9.5a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 0 9.5 9.5a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 1 9.5 9.5v1a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 1-9.5-9.5a-10.5-10.5 0 0 0-10.5-10.5h2a 9.5 9.5 0 0 1 9.5 9.5a 9.5 9.5 0 0 0 9.5 9.5zM-40 0a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 0 9.5 9.5a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 0 9.5 9.5a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 1 9.5 9.5v1a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5h2a 9.5 9.5 0 0 0 9.5 9.5zM40 0a 10.5 10.5 0 0 1 10.5 10.5h-1a-9.5-9.5 0 0 1-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 1-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5z' fill='rgba(102, 126, 234,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='35' height='35' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(99, 179, 237,1)'/%3E%3Ccircle cx='24' cy='20' r='8' fill='rgba(214, 158, 46,1)'/%3E%3Ccircle cx='16' cy='20' r='8' fill='rgba(214, 158, 46,1)'/%3E%3Ccircle cx='20' cy='24' r='8' fill='rgba(214, 158, 46,1)'/%3E%3Ccircle cx='20' cy='16' r='8' fill='rgba(214, 158, 46,1)'/%3E%3Ccircle cx='32' cy='8' r='8' fill='%23ecc94b'/%3E%3Ccircle cx='8' cy='32' r='8' fill='%23ecc94b'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%23ecc94b'/%3E%3Ccircle cx='8' cy='8' r='8' fill='%23ecc94b'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
     overflow-x:hidden;
     font-family: 'Main Font';
 }
+.stars{
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height:100%;
+    overflow:hidden;
+    z-index:-5;
+}
+.stars img{
+    position: relative;
+    user-select: none;
+    width: calc(400px / var(--j));
+    height: auto;
+    margin: 0px 4px;
+    filter: invert(31%) sepia(96%) saturate(7219%) hue-rotate(359deg) brightness(94%) contrast(124%);
+    animation: animate 25s linear infinite;
+    animation-duration: calc(150s / var(--i));
+    z-index:-5;
+}
+.stars img:nth-child(2n){
+    filter: invert(87%) sepia(49%) saturate(1038%) hue-rotate(358deg) brightness(103%) contrast(111%);
+}
+.stars img:nth-child(3n){
+    filter: invert(8%) sepia(100%) saturate(6943%) hue-rotate(247deg) brightness(101%) contrast(141%);
+    animation: ranimate 15s linear infinite;
+    animation-duration: calc(145s / var(--i));
+}
+.stars img:nth-child(4n){
+    filter: invert(100%) sepia(0%) saturate(1283%) hue-rotate(185deg) brightness(122%) contrast(100%);
+}
+.stars img:nth-child(5n){
+    filter: invert(69%) sepia(95%) saturate(4879%) hue-rotate(88deg) brightness(127%) contrast(118%);
+    animation: ranimate 15s linear infinite;
+    animation-duration: calc(130s / var(--i));
+}
+.stars img:nth-child(6n){
+    filter: invert(18%) sepia(90%) saturate(3547%) hue-rotate(292deg) brightness(111%) contrast(129%);
+    animation: lanimate 15s linear infinite;
+    animation-duration: calc(140s / var(--i));
+}
+@keyframes animate{
+    0% {
+        transform: translateY(-100vh) scale(1);
+    }
+    100% {
+        transform: translateY(100vh) scale(1) rotate(360deg);
+    }
+}
+
+@keyframes lanimate{
+    0% {
+        transform: translateY(-100vh) translateX(100vh) scale(1);
+    }
+    100% {
+        transform: translateY(100vh) translateX(50vh) scale(1) rotate(-360deg);
+    }
+}
+
+@keyframes ranimate{
+    0% {
+        transform: translateY(-100vh) translateX(50vh) scale(1);
+    }
+    100% {
+        transform: translateY(100vh) translateX(100vh) scale(1) rotate(-360deg);
+    }
+}
+
 .marquee {
     --gap: 1rem;
     display: flex;
@@ -101,6 +182,7 @@ animation: scroll 40s linear infinite;
     margin:12px;
     padding:10px;
     border:white solid 1px;
+    letter-spacing: 1px;
 }
 .navbar li a:Hover {
     background: var(--dropdown-label-hover);
@@ -248,6 +330,7 @@ input[type=text]{
     justify-content: center;
     align-items: center;
     width: vw;
+    height:50px;
     transition: background-color 0.5s  ease;
     margin:6px;
     padding:0px;
@@ -267,7 +350,7 @@ input,textarea{
 /*fonts*/
 @font-face {
     font-family: 'Main Font';
-    src: url("/assets/fonts/KodeMono-VariableFont_wght.ttf");
+    src: url("/assets/fonts/minecraft2.ttf");
 }
 
 h1,h2,h3,h4{
@@ -394,7 +477,7 @@ h1,h3{
         font: 25px;
         background-color: #222b3ac9;
         text-align: center;
-        min-height: 80vh;
+        min-height: 70vh;
         min-width: 80vw;
         padding:15px;
         margin:25px;
@@ -407,7 +490,7 @@ h1,h3{
         border-image-repeat: stretch stretch; 
         border-style:solid;
         image-rendering: pixelated;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the values as needed */
+        box-shadow: 0 0 10px rgba(0, 0, 0, .8); /* Adjust the values as needed */
     }
 
     .collection{
@@ -461,7 +544,6 @@ h1,h3{
         position:block;
         padding:2vw;
         margin: 2vw 5vw;
-        border: 2px solid white;
         font-size: 2em;
     }
     .product-grid-mobile{
@@ -687,9 +769,7 @@ h1,h3{
 }
 /*desktop style*/
 @media screen and (min-width:1200px){
-    body{
-        background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='40' height='40' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(195, 218, 254,1)'/%3E%3Cpath d='M0 40a 9-9 0 0 0 9-9a 11-11 0 0 1 11-11a 9-9 0 0 0 9-9a 11-11 0 0 1 11-11v2a-9 9 0 0 0-9 9a-11 11 0 0 1-11 11a-9 9 0 0 0-9 9a-11 11 0 0 1-11 11zM0 0a 9-9 0 0 0 9-9h2a-11 11 0 0 1-11 11z' fill='rgba(79, 209, 197,1)'/%3E%3Cpath d='M0 0a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 0 9.5 9.5a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 0 9.5 9.5a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 1 9.5 9.5v1a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 1-9.5-9.5a-10.5-10.5 0 0 0-10.5-10.5h2a 9.5 9.5 0 0 1 9.5 9.5a 9.5 9.5 0 0 0 9.5 9.5zM-40 0a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 0 9.5 9.5a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 0 9.5 9.5a 10.5 10.5 0 0 1 10.5 10.5a 9.5 9.5 0 0 1 9.5 9.5v1a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 0-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5h2a 9.5 9.5 0 0 0 9.5 9.5zM40 0a 10.5 10.5 0 0 1 10.5 10.5h-1a-9.5-9.5 0 0 1-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5a-9.5-9.5 0 0 1-9.5-9.5a-10.5-10.5 0 0 1-10.5-10.5z' fill='rgba(102, 126, 234,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
-    }
+
     .overlay{
         display:none;
     }
